@@ -15,7 +15,8 @@ export default class SearchScreen extends Component {
     super(props);
     this.state = {
       allTransactions: [],
-      searchText: ""
+      searchText: "",
+      
     };
   }
   componentDidMount = async () => {
@@ -34,9 +35,6 @@ export default class SearchScreen extends Component {
       });
   };
 
-  
-
-  
   renderItem = ({ item, i }) => {
     var date = item.date
       .toDate()
@@ -93,11 +91,12 @@ export default class SearchScreen extends Component {
       </View>
     );
   };
+
 //complete a função handleSearch()
-  //handleSearch = async text => {
+handleSearch = async text => {
     
 
-    /*if (enteredText[0] === "B") {
+    if (enteredText[0] === "B") {
       db.collection("transactions")
         .where("book_id", "==", text)
         .get()
@@ -108,9 +107,9 @@ export default class SearchScreen extends Component {
             });
           });
         });
-    } */
-    
-  
+    }
+   
+}
   render() {
     const { searchText, allTransactions } = this.state;
     return (
